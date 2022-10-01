@@ -15,7 +15,12 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <ion-button expand="block" (click)="openModal()"> Create User</ion-button>
+    <ion-list>
+      <ion-item class="list-item"  *ngFor="let user of usersList; let i = index" (click)="openModal(user)">
+        <ion-label>{{user.firstName}} {{user.lastName}}</ion-label>
+        <ion-label>{{user.email}}</ion-label>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
